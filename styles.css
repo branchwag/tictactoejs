@@ -5,6 +5,7 @@
 }
 
 body {
+  color: #545454;
   display: flex;
   font-family: sans-serif;
   justify-content: center;
@@ -17,4 +18,8 @@ body {
   border-radius: 25px;
   width: 500px;
   height: 500px;
+}
+
+.title {
+  text-align: center;
 }
