@@ -23,3 +23,7 @@ body {
 .title {
   text-align: center;
 }
+
+.title span {
+  color: #f2ebd3;
+}
