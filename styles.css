@@ -54,7 +54,8 @@ body {
 }
 
 .game-cell {
-  height: 200px;
-  width: 200px;
+  height: 6.25em;
+  width: 6.25em;
   background: #14bdac;
+  cursor: pointer;
 }
