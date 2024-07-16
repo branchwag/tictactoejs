@@ -13,4 +13,12 @@ const handleReset = (e) => {
   console.log(e);
 };
 
+const handleCellClick = (e) => {
+  console.log(e);
+};
+
 resetDiv.addEventListener("click", handleReset);
+
+for (const cellDiv of cellDivs) {
+  cellDiv.addEventListener("click", handleCellClick);
+}
