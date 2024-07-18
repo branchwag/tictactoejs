@@ -14,7 +14,8 @@ const handleReset = (e) => {
 };
 
 const handleCellClick = (e) => {
-  console.log(e);
+  const location = e.target.classList[1];
+  console.log("location", location);
 };
 
 resetDiv.addEventListener("click", handleReset);
