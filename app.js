@@ -14,8 +14,22 @@ const handleReset = (e) => {
 };
 
 const handleCellClick = (e) => {
-  const location = e.target.classList[1];
-  console.log("location", location);
+  const classList = e.target.classList;
+  const location = classList[1];
+  //console.log("location", location);
+
+  if (classList[2] === "x" || classList[2] === "o") {
+    return;
+  }
+
+  if (xIsNext) {
+    //console.log(e.target);
+    classList.add("x");
+    xIsNext = !xIsNext;
+  } else {
+    classList.add("o");
+    xIsNext = !xIsNext;
+  }
 };
 
 resetDiv.addEventListener("click", handleReset);
