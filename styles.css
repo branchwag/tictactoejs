@@ -59,3 +59,13 @@ body {
   background: #14bdac;
   cursor: pointer;
 }
+
+.x::after {
+  content: "x";
+  font-size: 200px;
+}
+
+.o::after {
+  content: "o";
+  font-size: 200px;
+}
