@@ -56,16 +56,19 @@ body {
 .game-cell {
   height: 6.25em;
   width: 6.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #14bdac;
   cursor: pointer;
 }
 
 .x::after {
   content: "x";
-  font-size: 200px;
+  font-size: 150px;
 }
 
 .o::after {
   content: "o";
-  font-size: 200px;
+  font-size: 150px;
 }
