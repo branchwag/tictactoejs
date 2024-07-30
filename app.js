@@ -8,6 +8,7 @@ const cellDivs = document.querySelectorAll(".game-cell");
 
 let gameIsLive = true;
 let xIsNext = true;
+let winner = null;
 
 //functions
 
@@ -21,6 +22,13 @@ const checkGameStatus = () => {
   const bottomLeft = cellDivs[6].classList[2];
   const bottomMiddle = cellDivs[7].classList[2];
   const bottomRight = cellDivs[8].classList[2];
+
+  //check for winner
+  if (topLeft && topLeft === topMiddle && topLeft == topRight) {
+    gameIsLive = false;
+    winner = topLeft;
+    statusDiv.innerHTML = `${topLeft} has won!`;
+  }
 };
 
 const handleReset = (e) => {
