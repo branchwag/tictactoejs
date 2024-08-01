@@ -6,6 +6,9 @@ const cellDivs = document.querySelectorAll(".game-cell");
 // console.log(resetDiv);
 // console.log(cellDivs);
 
+const xSymbol = "x";
+const oSymbol = "o";
+
 let gameIsLive = true;
 let xIsNext = true;
 let winner = null;
@@ -27,7 +30,12 @@ const checkGameStatus = () => {
   if (topLeft && topLeft === topMiddle && topLeft == topRight) {
     gameIsLive = false;
     winner = topLeft;
-    statusDiv.innerHTML = `${topLeft} has won!`;
+    if (topLeft === 'x') {
+      statusDiv.innerHTML = `${topLeft} has won!`;
+    } else {
+      statusDiv.innerHTML = `<span>${topLeft} has won!</span>`;
+    }
+    
   }
 };
 
