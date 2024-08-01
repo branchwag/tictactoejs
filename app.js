@@ -15,6 +15,16 @@ let winner = null;
 
 //functions
 
+const handleWin = (letter) => {
+  gameIsLive = false;
+  winner = letter;
+  if (winner === "x") {
+    statusDiv.innerHTML = `${winner} has won!`;
+  } else {
+    statusDiv.innerHTML = `<span>${winner} has won!</span>`;
+  }
+};
+
 const checkGameStatus = () => {
   const topLeft = cellDivs[0].classList[2];
   const topMiddle = cellDivs[1].classList[2];
@@ -28,14 +38,19 @@ const checkGameStatus = () => {
 
   //check for winner
   if (topLeft && topLeft === topMiddle && topLeft == topRight) {
-    gameIsLive = false;
-    winner = topLeft;
-    if (topLeft === 'x') {
-      statusDiv.innerHTML = `${topLeft} has won!`;
-    } else {
-      statusDiv.innerHTML = `<span>${topLeft} has won!</span>`;
-    }
-    
+    handleWin(topLeft);
+  } else if (
+    middleLeft &&
+    middleLeft === middleMiddle &&
+    middleLeft === middleRight
+  ) {
+    handleWin(middleLeft);
+  } else if (
+    bottomLeft &&
+    bottomLeft === bottomMiddle &&
+    bottomLeft === bottomRight
+  ) {
+    handleWin(bottomLeft);
   }
 };
 
