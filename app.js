@@ -65,6 +65,19 @@ const checkGameStatus = () => {
     handleWin(topLeft);
   } else if (topRight && topRight === middleMiddle && topRight === bottomLeft) {
     handleWin(topRight);
+  } else if (
+    topLeft &&
+    topMiddle &&
+    topRight &&
+    middleLeft &&
+    middleMiddle &&
+    middleRight &&
+    bottomLeft &&
+    bottomMiddle &&
+    bottomRight
+  ) {
+    gameIsLive = false;
+    statusDiv.innerHTML = "Game is tied!";
   }
 };
 
