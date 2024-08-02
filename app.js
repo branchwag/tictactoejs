@@ -51,6 +51,20 @@ const checkGameStatus = () => {
     bottomLeft === bottomRight
   ) {
     handleWin(bottomLeft);
+  } else if (topLeft && topLeft === middleLeft && topLeft === bottomLeft) {
+    handleWin(topLeft);
+  } else if (
+    topMiddle &&
+    topMiddle === middleMiddle &&
+    topMiddle === bottomMiddle
+  ) {
+    handleWin(topMiddle);
+  } else if (topRight && topRight === middleRight && topRight === bottomRight) {
+    handleWin(topRight);
+  } else if (topLeft && topLeft === middleMiddle && topLeft === bottomRight) {
+    handleWin(topLeft);
+  } else if (topRight && topRight === middleMiddle && topRight === bottomLeft) {
+    handleWin(topRight);
   }
 };
 
