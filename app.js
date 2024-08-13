@@ -78,6 +78,13 @@ const checkGameStatus = () => {
   ) {
     gameIsLive = false;
     statusDiv.innerHTML = "Game is tied!";
+  } else {
+    xIsNext = !xIsNext;
+    if (xIsNext) {
+      statusDiv.innerHTML = `${xSymbol} is next`;
+    } else {
+      statusDiv.innerHTML = `<span>${oSymbol} is next</span>`
+    }
   }
 };
 
@@ -95,14 +102,11 @@ const handleCellClick = (e) => {
   }
 
   if (xIsNext) {
-    //console.log(e.target);
     classList.add("x");
     checkGameStatus();
-    xIsNext = !xIsNext;
   } else {
     classList.add("o");
     checkGameStatus();
-    xIsNext = !xIsNext;
   }
 };
 
